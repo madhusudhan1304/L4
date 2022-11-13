@@ -15,7 +15,7 @@ describe("Todolist Testing", () => {
 
   test("Add a new todo in list", () => {
 
-    let length = all.length;
+    let len = all.length;
 
     add({
       title: "node js learning",
@@ -23,7 +23,7 @@ describe("Todolist Testing", () => {
       dueDate: new Date().toLocaleDateString("en-CA"),
     });
 
-    expect(all.length).toBe(length + 1);
+    expect(all.length).toBe(len + 1);
   });
 
   test("Mark todo as a completed", () => {
