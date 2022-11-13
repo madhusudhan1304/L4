@@ -1,20 +1,19 @@
-/* eslint-disable no-undef */
+/* eslin-disable no-undef */
 const todoList = require("../todo");
 let today = new Date().toLocaleDateString("en-CA");
 
-const { all, markAsComplete, add, overdue, dueToday, dueLater } = todoList();
+const { all, markAsComplete, add, od, dueT, dueL } = todoList();
 
 describe("Todolist Testing", () => {
   beforeAll(() => {
     add({
-      title: "DAA algorithums",
+      title: "DAA algorithims",
       completed: false,
       dueDate: new Date().toLocaleDateString("en-CA"),
     });
   });
 
   test("Add a new todo in list", () => {
-    // expect(all.length).toBe(0);
 
     let length = all.length;
 
@@ -34,7 +33,7 @@ describe("Todolist Testing", () => {
   });
 
   test("retrive all todos that are overdue", () => {
-    let listOfTodos = overdue();
+    let listOfTodos = od();
 
     expect(
       listOfTodos.every((todo) => {
@@ -44,7 +43,7 @@ describe("Todolist Testing", () => {
   });
 
   test("retrive all todos that are dueToday", () => {
-    let listOfTodos = dueToday();
+    let listOfTodos = dueT();
 
     expect(
       listOfTodos.every((todo) => {
@@ -54,7 +53,7 @@ describe("Todolist Testing", () => {
   });
 
   test("retrive all todos that are dueLater", () => {
-    let listOfTodos = dueLater();
+    let listOfTodos = dueL();
 
     expect(
       listOfTodos.every((todo) => {
